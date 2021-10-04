@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Button } from 'semantic-ui-react';
 import Contact from '../../app/models/contact';
 import { add, selectContacts } from '../../app/reducers/contactsSlice';
 import { AppDispatch, RootState } from '../../app/store';
@@ -11,11 +10,7 @@ type Props = {
 }
 
 function ContactsList({ contacts, onAdd }: Props) {
-  return (
-    <Button>
-      Add
-    </Button>
-  );
+  return <span>test</span>;
 }
 
 export default connect(
