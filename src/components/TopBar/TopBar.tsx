@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, Grid, Header, StrictHeaderProps } from 'semantic-ui-react';
+import { Grid, Header, StrictHeaderProps } from 'semantic-ui-react';
+import AddContact from '../Contact/AddContact';
 import SearchBar from './SearchBar';
 
 type Props = StrictHeaderProps;
@@ -14,7 +15,7 @@ export default function TopBar(props: Props) {
             <SearchBar />
           </Grid.Column>
           <Grid.Column width={4}>
-            <Button fluid>Add Contact</Button>
+            <AddContact />
           </Grid.Column>
         </Grid.Row>
       </Grid>

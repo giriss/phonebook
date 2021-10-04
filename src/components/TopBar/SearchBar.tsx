@@ -1,6 +1,6 @@
 import React, { useMemo, memo } from "react";
 import { connect } from "react-redux";
-import { Dropdown, Input } from "semantic-ui-react";
+import { Input, Select } from "semantic-ui-react";
 import { FILTER_OPTIONS } from "../../app/constants";
 import { Filter, selectCriteria, selectFilter, updateCriteria, updateFilter } from "../../app/reducers/searchSlice";
 import { AppDispatch, RootState } from "../../app/store";
@@ -34,7 +34,7 @@ const SearchBar = memo(function ({
       placeholder={searchPlaceholder}
       onChange={event => onCriteriaChange(event.target.value)}
       action={
-        <Dropdown
+        <Select
           button
           basic
           floating
