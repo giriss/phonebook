@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { Form, Header, Icon, Popup } from 'semantic-ui-react';
+import { Button, Form, Header, Icon, Popup } from 'semantic-ui-react';
 
 type Props = {
   groupName: string;
@@ -45,9 +45,9 @@ export default function DynamicFormGroupBuilder({
       <Popup
         position="right center"
         trigger={
-          <Form.Button type="button" icon onClick={onAdd}>
+          <Button type="button" icon onClick={onAdd}>
             <Icon name="add" />
-          </Form.Button>
+          </Button>
         }
       >
         Add {itemName}
