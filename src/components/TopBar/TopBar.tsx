@@ -1,21 +1,22 @@
-import React from 'react';
-import { Grid, Header, StrictHeaderProps } from 'semantic-ui-react';
-import AddContact from '../Contact/AddContact';
+import React, { ReactNode } from 'react';
+import { Grid, Header } from 'semantic-ui-react';
 import SearchBar from './SearchBar';
 
-type Props = StrictHeaderProps;
+type Props = {
+  action: ReactNode;
+};
 
-export default function TopBar(props: Props) {
+export default function TopBar({ action }: Props) {
   return (
     <>
-      <Header {...props}>Phonebook</Header>
+      <Header textAlign="center">Phonebook</Header>
       <Grid stackable>
         <Grid.Row>
           <Grid.Column width={12}>
             <SearchBar />
           </Grid.Column>
           <Grid.Column width={4}>
-            <AddContact />
+            {action}
           </Grid.Column>
         </Grid.Row>
       </Grid>

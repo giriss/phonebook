@@ -1,7 +1,8 @@
 import React from 'react';
-import { Container, Divider, Segment } from 'semantic-ui-react';
-import ContactsList from '../ContactsList/ContactsList';
-import TopBar from '../TopBar/TopBar';
+import { Route, Switch } from 'react-router';
+import { Container, Header, Segment } from 'semantic-ui-react';
+import { allowedPaths } from '../../app/routeResolver';
+import PhonebookApp from './PhonebookApp';
 
 import cls from './App.module.sass';
 
@@ -9,9 +10,14 @@ function App() {
   return (
     <Container className={cls.appContainer}>
       <Segment stacked>
-        <TopBar className={cls.appTitle} />
-        <Divider />
-        <ContactsList />
+        <Switch>
+          <Route exact path={allowedPaths}>
+            <PhonebookApp />
+          </Route>
+          <Route>
+            <Header>Oops - 404</Header>
+          </Route>
+        </Switch>
       </Segment>
     </Container>
   );

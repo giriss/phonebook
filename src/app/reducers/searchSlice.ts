@@ -19,7 +19,7 @@ export const searchSlice = createSlice({
   initialState,
   reducers: {
     updateCriteria(state, { payload: criteria }: PayloadAction<string>) {
-      state.criteria = criteria;
+      state.criteria = criteria.toLowerCase();
     },
     updateFilter(state, { payload: filter }: PayloadAction<Filter>) {
       state.filter = filter;
