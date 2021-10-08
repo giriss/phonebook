@@ -3,18 +3,16 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import 'semantic-ui-css/semantic.min.css'
-import App from './components/App/App';
+import BaseApp from './components/App/BaseApp';
 import { store } from './app/store';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  // <React.StrictMode>
     <Provider store={store}>
       <Router>
-        <App />
+        <BaseApp />
       </Router>
     </Provider>,
-  // </React.StrictMode>,
   document.getElementById('root')
 );
 

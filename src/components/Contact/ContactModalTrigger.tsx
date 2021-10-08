@@ -76,6 +76,7 @@ function ContactModalTrigger({
     >
       {props => (
         <Modal
+          closeIcon
           onOpen={openModal}
           onClose={closeModal}
           open={isOpen}

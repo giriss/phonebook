@@ -4,9 +4,9 @@ import { Container, Header, Segment } from 'semantic-ui-react';
 import { allowedPaths } from '../../app/routeResolver';
 import PhonebookApp from './PhonebookApp';
 
-import cls from './App.module.sass';
+import cls from './BaseApp.module.sass';
 
-function App() {
+function BaseApp() {
   return (
     <Container className={cls.appContainer}>
       <Segment stacked>
@@ -23,4 +23,4 @@ function App() {
   );
 }
 
-export default App;
+export default BaseApp;
