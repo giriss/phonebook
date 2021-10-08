@@ -3,6 +3,7 @@
 - I used redux's `connect` instead of `useDispatch` / `useSelector` since I do not like this kind of heavy coupling between react and the state management solution.
 - I have also implemented routing for creation and edition.
 - I save the some partial info from the state to the localStorage just for convience purposes (You don't need to re-create contacts on every reload 😋).
+- I also added ESLint ;)
 - You can also access the app **[HERE](https://phonebook-brown.vercel.app/)**!!!
 
 ## How to setup

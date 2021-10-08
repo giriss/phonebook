@@ -14,7 +14,7 @@ type Props = FormikProps<Contact> & {
   onSubmit: (event: React.FormEvent<HTMLFormElement>, data: FormProps) => void;
 };
 
-export default forwardRef<HTMLElement, Props>(function({
+export default forwardRef<HTMLElement, Props>(function ContactForm({
   onSubmit,
   handleChange,
   handleBlur,
@@ -23,7 +23,7 @@ export default forwardRef<HTMLElement, Props>(function({
   setFieldValue,
   errors,
   touched,
-}, ref) {
+}: Props, ref) {
   const commonInputProps = useMemo(() => ({
     onChange: handleChange,
     onBlur: handleBlur,

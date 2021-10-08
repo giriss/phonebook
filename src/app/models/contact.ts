@@ -14,7 +14,7 @@ export type PhoneNumber = {
 export enum EmailType {
   Personal = 'Personal',
   Professional = 'Professional',
-};
+}
 
 export type Email = {
   id: string;
@@ -25,7 +25,7 @@ export type Email = {
 export enum AddressType {
   Home = 'Home',
   Work = 'Work',
-};
+}
 
 export type Address = {
   id: string;

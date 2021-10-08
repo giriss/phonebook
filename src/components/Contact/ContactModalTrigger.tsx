@@ -75,7 +75,7 @@ function ContactModalTrigger({
       initialValues={initialValues}
       onSubmit={formSubmitted}
     >
-      {props => (
+      {(props: FormikProps<Contact>) => (
         <Modal
           closeIcon
           onOpen={openModal}

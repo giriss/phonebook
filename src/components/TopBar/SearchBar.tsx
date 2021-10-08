@@ -12,7 +12,7 @@ type Props = {
   onFilterChange: (newFilter: Filter) => void;
 };
 
-const SearchBar = memo(function ({
+const SearchBar = memo(function SearchBar({
   currentCriteria,
   currentFilter,
   onCriteriaChange,
