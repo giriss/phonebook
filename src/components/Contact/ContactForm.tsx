@@ -53,14 +53,25 @@ export default forwardRef<HTMLElement, Props>(function({
         <Header>Personal info</Header>
         <Form.Group widths="equal">
           <Form.Input
-            name="fullName"
-            label="Full name"
-            placeholder="Full name"
-            value={values.fullName}
-            error={touched.fullName && errors.fullName}
+            name="firstName"
+            label="First name"
+            placeholder="First name"
+            value={values.firstName}
+            error={touched.firstName && errors.firstName}
             {...commonInputProps}
           />
           <Form.Input
+            name="lastName"
+            label="Last name"
+            placeholder="Last name"
+            value={values.lastName}
+            error={touched.lastName && errors.lastName}
+            {...commonInputProps}
+          />
+        </Form.Group>
+        <Form.Group>
+          <Form.Input
+            width="eight"
             name="dob"
             label="Date of birth"
             type="date"

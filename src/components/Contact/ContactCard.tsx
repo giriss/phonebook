@@ -13,7 +13,7 @@ type Props = {
 };
 
 function ContactCard({
-  contact: { id, fullName, dob, phoneNumbers, emails, addresses },
+  contact: { id, firstName, lastName, dob, phoneNumbers, emails, addresses },
   onDelete,
 }: Props) {
   const history = useHistory();
@@ -25,7 +25,7 @@ function ContactCard({
   return (
     <Card link raised data-testid="contact-card">
       <Card.Content onClick={openEditModal}>
-        <Card.Header>{fullName}</Card.Header>
+        <Card.Header>{firstName} {lastName}</Card.Header>
         <Card.Meta>Born on {dob}</Card.Meta>
         <Card.Description>
           {phoneNumbers.map(phoneNumber => (

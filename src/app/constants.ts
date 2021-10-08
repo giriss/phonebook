@@ -13,8 +13,12 @@ export const FILTER_OPTIONS: FilterOptions = [
     text: 'Any',
   },
   {
-    value: 'fullName',
-    text: 'Full name',
+    value: 'firstName',
+    text: 'First name',
+  },
+  {
+    value: 'lastName',
+    text: 'Last name',
   },
   {
     value: 'phoneNumbers',

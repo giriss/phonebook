@@ -35,7 +35,8 @@ export type Address = {
 
 type Contact = {
   id: string;
-  fullName: string;
+  firstName: string;
+  lastName: string;
   phoneNumbers: Array<PhoneNumber>;
   emails: Array<Email>;
   addresses: Array<Address>;

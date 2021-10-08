@@ -12,7 +12,8 @@ import { contact, root } from '../../app/routeResolver';
 
 const EMPTY_CONTACT: Contact = Object.freeze({
   id: '',
-  fullName: '',
+  firstName: '',
+  lastName: '',
   phoneNumbers: new Array<PhoneNumber>(),
   emails: new Array<Email>(),
   addresses: new Array<Address>(),

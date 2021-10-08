@@ -46,7 +46,15 @@ type ContactByIdMap = { [k: string]: Contact };
 
 const filterByFullName = (state: RootState) =>
   selectContacts(state).filter(contact =>
-    contact.fullName.toLowerCase().includes(selectCriteria(state)));
+    `${contact.firstName} ${contact.lastName}`.toLowerCase().includes(selectCriteria(state)));
+
+const filterByFirstName = (state: RootState) =>
+  selectContacts(state).filter(contact =>
+    contact.firstName.toLowerCase().includes(selectCriteria(state)));
+
+const filterByLastName = (state: RootState) =>
+  selectContacts(state).filter(contact =>
+    contact.lastName.toLowerCase().includes(selectCriteria(state)));
 
 const filterByDob = (state: RootState) =>
   selectContacts(state).filter(contact =>
@@ -75,7 +83,8 @@ export const selectFilteredContacts = (state: RootState) => {
   const filter = selectFilter(state);
 
   switch (filter) {
-    case 'fullName': return filterByFullName(state);
+    case 'firstName': return filterByFirstName(state);
+    case 'lastName': return filterByLastName(state);
     case 'dob': return filterByDob(state);
     case 'phoneNumbers': return filterByPhoneNumbers(state);
     case 'emails': return filterByEmails(state);
