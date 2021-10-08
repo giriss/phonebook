@@ -6,6 +6,8 @@ import { addressOptions, defaultValue, emailOptions, phoneNumberOptions } from '
 import Contact, { Address, Email, PhoneNumber } from '../../app/models/contact';
 import DynamicFormGroupBuilder from './DynamicFormGroupBuilder';
 
+import cls from './ContactForm.module.sass';
+
 type FormGroupType = 'emails' | 'addresses' | 'phoneNumbers';
 
 type Props = FormikProps<Contact> & {
@@ -176,6 +178,7 @@ export default forwardRef<HTMLElement, Props>(function({
             </>
           )}
         </DynamicFormGroupBuilder>
+        <Form.Button className={cls.submitButton} />
       </Form>
     </Ref>
   );
