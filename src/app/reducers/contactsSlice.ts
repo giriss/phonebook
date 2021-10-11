@@ -16,13 +16,29 @@ export const contactsSlice = createSlice({
   initialState,
   reducers: {
     add: {
-      reducer({ items: contacts }, { payload: newContact }: PayloadAction<Contact>) {
-        contacts.push(newContact);
-      },
       prepare(newContact: Contact) {
         return {
           payload: { ...newContact, id: nanoid() }
         };
+      },
+      reducer({ items: contacts }, { payload: newContact }: PayloadAction<Contact>) {
+        contacts.push(newContact);
+      },
+    },
+    copy: {
+      prepare(id: Contact['id']) {
+        return {
+          payload: { id , newId: nanoid() }
+        };
+      },
+      reducer({ items: contacts }, { payload: { id, newId } }: PayloadAction<{ [k: string]: Contact['id'] }>) {
+        const originalContact = contacts.find(contact => id === contact.id);
+        if (originalContact) {
+          contacts.push({
+            ...originalContact,
+            id: newId,
+          });
+        }
       },
     },
     edit({ items: contacts }, { payload: updatedContact }: PayloadAction<Contact>) {
@@ -36,7 +52,7 @@ export const contactsSlice = createSlice({
   },
 });
 
-export const { add, edit, remove } = contactsSlice.actions;
+export const { add, edit, remove, copy } = contactsSlice.actions;
 
 export const selectContacts = (state: RootState) => state.contacts.items;
 export const selectContact = (state: RootState, id: Contact['id']) =>

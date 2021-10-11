@@ -3,18 +3,20 @@ import { connect } from 'react-redux';
 import { useHistory } from 'react-router';
 import { Button, Card, Icon } from 'semantic-ui-react';
 import Contact from '../../app/models/contact';
-import { remove } from '../../app/reducers/contactsSlice';
+import { copy, remove } from '../../app/reducers/contactsSlice';
 import { contact } from '../../app/routeResolver';
 import { AppDispatch } from '../../app/store';
 
 type Props = {
   contact: Contact;
   onDelete: VoidFunction;
+  onCopy: VoidFunction;
 };
 
 function ContactCard({
   contact: { id, firstName, lastName, dob, phoneNumbers, emails, addresses },
   onDelete,
+  onCopy,
 }: Props) {
   const history = useHistory();
 
@@ -46,9 +48,12 @@ function ContactCard({
         </Card.Description>
       </Card.Content>
       <Card.Content extra>
-        <div className='ui two buttons'>
+        <div className='ui three buttons'>
           <Button basic color='green' onClick={openEditModal}>
             <Icon name="edit" /> Edit
+          </Button>
+          <Button basic color='orange' onClick={onCopy}>
+            <Icon name="copy" /> Copy
           </Button>
           <Button basic color='red' onClick={onDelete}>
             <Icon name="delete" /> Delete
@@ -68,6 +73,9 @@ export default connect(
   (dispatch: AppDispatch, { contact: { id } }: ConnectedProps) => ({
     onDelete() {
       dispatch(remove(id));
+    },
+    onCopy() {
+      dispatch(copy(id));
     },
   }),
 )(ContactCard);
